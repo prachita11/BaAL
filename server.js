@@ -1,13 +1,9 @@
-var bodyParser = require("body-parser");
 const express = require("express");
 const apiHandler = require("./api-handler/api-function");
 const api = express();
-api.use(bodyParser.json());
-api.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
+app.use(express.json())
+app.use(express.urlencoded());
+
 api.use(function (req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
