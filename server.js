@@ -17,4 +17,4 @@ api.get("/banks",async (req, res) =>await apiHandler.getBanks(req,res));
 api.get("/cities/:state_id",async (req, res) =>await apiHandler.getCities(req,res));
 api.post("/branch",async (req, res) =>await apiHandler.getResults(req,res));
 api.post("/search",async(req,res)=>await apiHandler.getKeywordResults(req,res))
-api.listen(3001, () => console.log("Server is running on 3001"));
+api.listen(process.env.PORT||3001, () => console.log("Server is running on 3001"));
