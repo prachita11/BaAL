@@ -1,8 +1,8 @@
 const express = require("express");
 const apiHandler = require("./api-handler/api-function");
 const api = express();
-app.use(express.json())
-app.use(express.urlencoded());
+api.use(express.json())
+api.use(express.urlencoded());
 
 api.use(function (req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "*");
