@@ -7,16 +7,16 @@ const Branch = require("../schema/Branch");
 connect();
 
 const getStates = async (req, res) => {
-  let states = await State.find({ country_id: 1 });
+  let states = await State.find({ country_id: 1 }).sort( { "state_id": 1 } );
   return res.json({ success: true, data: states });
 };
 const getCities = async (req, res) => {
-  let cities = await City.find({ state_id: req.params.state_id });
+  let cities = await City.find({ state_id: req.params.state_id }).sort( { "city_id": 1 } );
   return res.json({ success: true, data: cities });
 };
 
 const getBanks = async (req, res) => {
-  let banks = await Bank.find({});
+  let banks = await Bank.find({}).sort( { "bank_id": 1 } );
   return res.json({ success: true, data: banks });
 };
 
