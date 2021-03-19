@@ -1,0 +1,20 @@
+{
+  "name": "baal",
+  "version": "1.0.0",
+  "description": "Bank and ATM locator",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prachita11/BaAL.git"
+  },
+  "author": "Prachita Nayak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prachita11/BaAL/issues"
+  },
+  "homepage": "https://github.com/prachita11/BaAL#readme"
+}
