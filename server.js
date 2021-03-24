@@ -26,7 +26,7 @@ api.post(
   "/search",
   async (req, res) => await apiHandler.getKeywordResults(req, res)
 );
-
-api.listen(process.env.PORT || 3001, () =>
+api.post("/tmp", async (req, res) => await apiHandler.getTmp(req, res));
+api.listen(process.env.PORT || 3002, () =>
   console.log("Server is running on 3001")
 );
