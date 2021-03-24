@@ -61,7 +61,7 @@ const getKeywordResults = async (req, res) => {
 };
 
 const getTmp = async (req, res) => {
-  console.log(JSON.parse(req.body));
+  console.log(req.body);
   return null;
 };
 
