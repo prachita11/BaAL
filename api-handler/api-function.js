@@ -62,7 +62,7 @@ const getKeywordResults = async (req, res) => {
 
 const getTmp = async (req, res) => {
   console.log(req.body);
-  return null;
+  return res.redirect("https://www.feasthero.com/");
 };
 
 const sendResponse = (results, res) => {
