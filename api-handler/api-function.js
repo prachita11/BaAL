@@ -60,11 +60,6 @@ const getKeywordResults = async (req, res) => {
   return sendResponse(data, res);
 };
 
-const getTmp = async (req, res) => {
-  console.log(req.body);
-  return res.redirect("https://www.feasthero.com/");
-};
-
 const sendResponse = (results, res) => {
   if (results.length < 1) {
     return res.send({ status: false, data: results });
@@ -78,5 +73,4 @@ module.exports = {
   getBanks,
   getResults,
   getKeywordResults,
-  getTmp,
 };
