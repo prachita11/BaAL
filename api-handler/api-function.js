@@ -73,5 +73,4 @@ module.exports = {
   getBanks,
   getResults,
   getKeywordResults,
-  getTmp,
 };
