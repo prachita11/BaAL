@@ -15,6 +15,7 @@ api.use(function (req, res, next) {
   res.setHeader("Access-Control-Allow-Credentials", true);
   next();
 });
+
 api.get("/states", async (req, res) => await apiHandler.getStates(req, res));
 api.get("/banks", async (req, res) => await apiHandler.getBanks(req, res));
 api.get(
@@ -26,7 +27,11 @@ api.post(
   "/search",
   async (req, res) => await apiHandler.getKeywordResults(req, res)
 );
+api.get(
+  "/api/:email",
+  async (req, res) => await apiHandler.verifyEmail(req, res)
+);
 
-api.listen(process.env.PORT || 3002, () =>
+api.listen(process.env.PORT || 3001, () =>
   console.log("Server is running on 3001")
 );
