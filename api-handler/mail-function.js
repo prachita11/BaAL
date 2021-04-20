@@ -25,7 +25,7 @@ async function main(email, access) {
         `<h3> Thanks for downloading BaAL developers guide </h3>
         <p> Hi ` +
         email +
-        ` Here are the details for you to access the Developer's API kit. You can also visit --insert link-- for detailed documentation
+        ` Here are the details for you to access the Developer's API kit. You can also visit < href="https://baal-in.netlify.app/api">https://baal-in.netlify.app/api </a> for detailed documentation
         <br> 
         <b> Please donot share the API key</b>
          <h4> API KEY : ${access}</h4>
