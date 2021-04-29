@@ -1,12 +1,14 @@
 const express = require("express");
 const apiHandler = require("./api-handler/api-function");
 const cors = require("cors");
+var path = require("path");
 const api = express();
 api.use(express.json());
 api.use(express.urlencoded());
 api.use(cors());
+api.use(express.static(path.join(__dirname, "api-handler")));
 var corsOptions = {
-  origin: "https://baal-in.netlify.app",
+  origin: ["https://baal-in.netlify.app", "http://localhost:3000"],
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 api.use(function (req, res, next) {
