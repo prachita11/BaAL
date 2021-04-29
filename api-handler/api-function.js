@@ -282,7 +282,7 @@ const generateAPI = async (req, res, valid_email) => {
 
 const getAPIKit = async (req, res) => {
   res.type("Blob");
-  return res.sendFile("./BaAL.zip");
+  return res.sendFile("apiHandler/BaAL.zip");
 };
 
 const decrementLimit = async (req, res) => {
