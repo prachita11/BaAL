@@ -1,5 +1,6 @@
 const express = require("express");
 const apiHandler = require("./api-handler/api-function");
+
 const api = express();
 api.use(express.json());
 api.use(express.urlencoded());
@@ -27,11 +28,34 @@ api.post(
   "/search",
   async (req, res) => await apiHandler.getKeywordResults(req, res)
 );
-api.get(
-  "/api/:email",
-  async (req, res) => await apiHandler.verifyEmail(req, res)
-);
 
+api.post(
+  "/api/register",
+  async (req, res) => await apiHandler.Register(req, res)
+);
+api.post("/api/login", async (req, res) => await apiHandler.Login(req, res));
+api.get("/api", async (req, res) => await apiHandler.getAPIKit(req, res));
+api.get(
+  "/transaction/:api",
+  async (req, res) => await apiHandler.getTransactions(req, res)
+);
+api.post(
+  "/api/changePass",
+  async (req, res) => await apiHandler.changePass(req, res)
+);
+api.get(
+  "/limit/:api",
+  async (req, res) => await apiHandler.getLimits(req, res)
+);
+api.post("/sub", async (req, res) => await apiHandler.subscription(req, res));
+api.post(
+  "/updatePlan",
+  async (req, res) => await apiHandler.updatePlan(req, res)
+);
+api.post(
+  "/resetPass",
+  async (req, res) => await apiHandler.resetPass(req, res)
+);
 api.listen(process.env.PORT || 3001, () =>
   console.log("Server is running on 3001")
 );
