@@ -6,7 +6,7 @@ api.use(express.json());
 api.use(express.urlencoded());
 api.use(cors());
 var corsOptions = {
-  origin: "https://baal-in.netlify.app/",
+  origin: "https://baal-in.netlify.app",
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 api.use(function (req, res, next) {
