@@ -11,8 +11,12 @@ async function main(email, access) {
       //remove service if you have your own smtp server.
       service: "gmail",
       auth: {
+        type: "OAuth2",
         user: process.env.EMAIL, //process.env.EMAIL,
-        pass: process.env.PASSWORD, // process.env.PASSWORD,
+        clientId: process.env.CLIENTID,
+        clientSecret: process.env.CLIENTSECRET,
+        accessToken: process.env.NODEMAILER_ACCESS,
+        refreshToken: process.env.NODEMAILER_REFRESH,
       },
     });
 
@@ -49,8 +53,12 @@ async function subscription(email, plan, price, limit) {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
+        type: "OAuth2",
         user: process.env.EMAIL, //process.env.EMAIL,
-        pass: process.env.PASSWORD, // process.env.PASSWORD,
+        clientId: process.env.CLIENTID,
+        clientSecret: process.env.CLIENTSECRET,
+        accessToken: process.env.NODEMAILER_ACCESS,
+        refreshToken: process.env.NODEMAILER_REFRESH,
       },
     });
 
