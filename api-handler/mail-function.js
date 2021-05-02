@@ -111,11 +111,14 @@ async function reset(email, pass) {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
+        type: "OAuth2",
         user: process.env.EMAIL, //process.env.EMAIL,
-        pass: process.env.PASSWORD, // process.env.PASSWORD,
+        clientId: process.env.CLIENTID,
+        clientSecret: process.env.CLIENTSECRET,
+        accessToken: process.env.NODEMAILER_ACCESS,
+        refreshToken: process.env.NODEMAILER_REFRESH,
       },
     });
-
     // send mail with defined transport object
     let info = await transporter.sendMail({
       from: process.env.EMAIL, // sender address
