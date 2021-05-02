@@ -449,7 +449,6 @@ const resetPass = async (req, res) => {
   try {
     let email = req.body.email;
     let account = await Token.find({ email: email });
-    console.log(account);
     if (account.length <= 0) {
       return res.json({
         error: true,
