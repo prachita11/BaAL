@@ -131,7 +131,7 @@ async function reset(email, pass) {
         `  , <br>Here is your reset password to log in to your account
         <br> 
         <h4> Password : ${pass} </h4>
-        <h4> Click <a href="http://localhost:3000/dev/login"> here </a> to log in to your account </h4>
+        <h4> Click <a href="https://baal-in.netlify.app/dev/login"> here </a> to log in to your account </h4>
         <br> 
          <b> Team BaAL </b>
            `,
