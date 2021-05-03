@@ -15,7 +15,9 @@ const stripe = require("stripe")(process.env.stripe);
 connect();
 
 const getStates = async (req, res) => {
-  console.log(req.connection.remoteAddress);
+  require("dns").reverse(req.connection.remoteAddress, function (err, domains) {
+    console.log(domains);
+  });
   let response = 200;
   let token = await getToken(req);
   try {
