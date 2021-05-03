@@ -336,7 +336,7 @@ const updateTransaction = async (req, response) => {
 
 const getTransactions = async (req, res) => {
   let api = req.params.api;
-  let data = await Transaction.find({ api: api });
+  let data = await Transaction.find({ api: api }).sort({ executionDate: -1 });
   return res.json({ error: false, data: data });
 };
 
