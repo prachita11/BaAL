@@ -11,13 +11,17 @@ const Branch = require("../schema/Branch");
 const Token = require("../schema/Token");
 const Transaction = require("../schema/Transaction");
 const saltrounds = 10;
+const os = require("os");
 const stripe = require("stripe")(process.env.stripe);
 connect();
 
 const getStates = async (req, res) => {
-  require("dns").reverse(req.connection.remoteAddress, function (err, domains) {
-    console.log(domains);
-  });
+  console.log(
+    os.hostname(),
+    req.headers["x-forwarded-for"],
+    req.connection.remoteAddress
+  );
+
   let response = 200;
   let token = await getToken(req);
   try {
