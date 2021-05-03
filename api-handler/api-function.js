@@ -16,12 +16,6 @@ const stripe = require("stripe")(process.env.stripe);
 connect();
 
 const getStates = async (req, res) => {
-  console.log(
-    os.hostname(),
-    req.headers["x-forwarded-for"],
-    req.connection.remoteAddress
-  );
-
   let response = 200;
   let token = await getToken(req);
   try {
@@ -329,6 +323,7 @@ const updateTransaction = async (req, response) => {
     const token = authHeader && authHeader.split(" ")[1];
     let transaction = new Transaction({
       api: token,
+      ipv4: req.headers["x-forwarded-for"],
       request: req.route.path,
       response: response,
     });
